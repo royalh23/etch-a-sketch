@@ -4,5 +4,9 @@ const cdiv = document.querySelector('.container');
 for (let i = 1; i < 257; i++) {
   const div = document.createElement('div');
   div.style.cssText = "border: 1px solid black; height: 20px; width: 20px";
+  div.style.display = "inline-block";
+  div.style.boxSizing = "border-box";
+  div.style.verticalAlign = "bottom";
+  div.setAttribute('id', `div${i}`);
   cdiv.appendChild(div);
 }

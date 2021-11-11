@@ -1,4 +1,8 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
+.container>div {
+  float: left;
+}
+
+#div17, #div33, #div49, #div65, #div81, #div97, #div113, #div129, #div145, 
+#div161, #div177, #div193, #div209, #div225, #div241 {
+  clear: left;
 }
