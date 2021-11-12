@@ -1,8 +1,4 @@
-.container>div {
-  float: left;
-}
-
-.container>div:nth-child(16n + 1) {
-  clear: left;
-  margin-left: 600px;
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
