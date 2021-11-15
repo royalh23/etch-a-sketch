@@ -22,5 +22,27 @@ function createGrid() {
   if (n > 100) {
     alert("The maximum limit is 100.");
     return;
+  } else if (n === null) {
+      return;
+  } else {
+      // Clear the old grid
+      while (cdiv.firstChild) {
+        cdiv.removeChild(cdiv.firstChild);
+      }
+
+      // Create the new grid
+      for (let c = 1; c < n * n + 1; c++) {
+        const div = document.createElement('div');
+        div.style.width = `${Math.floor(480 / n)}px`;
+        div.style.height = `${Math.floor(480 / n)}px`;
+        cdiv.style.width = `${Math.floor(480 / n) * n}px`;
+        cdiv.style.height = `${Math.floor(480 / n) * n}px`;
+        cdiv.appendChild(div);
+      }
+      
+      // Add an event listener to the divs again (since they had been deleted)
+      cdiv.childNodes.forEach(div => {
+        div.addEventListener('mouseenter', changeColor)
+      }); 
   }
 }
