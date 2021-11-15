@@ -12,3 +12,15 @@ cdiv.childNodes.forEach(div => div.addEventListener('mouseenter', changeColor));
 function changeColor(e) {
   e.target.style.background = "black";
 }
+
+// Button to create the new grid
+const button = document.querySelector('button');
+button.addEventListener('click', createGrid);
+
+function createGrid() {
+  let n = prompt("How many squares per side do you want in the new grid?");
+  if (n > 100) {
+    alert("The maximum limit is 100.");
+    return;
+  }
+}
