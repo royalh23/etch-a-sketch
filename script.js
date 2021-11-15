@@ -9,10 +9,6 @@ for (let i = 1; i < 257; i++) {
 // Add event listener to square divs
 cdiv.childNodes.forEach(div => div.addEventListener('mouseenter', changeColor));
 
-function changeColor(e) {
-  e.target.style.background = "black";
-}
-
 // Button to create the new grid
 const button = document.querySelector('button');
 button.addEventListener('click', createGrid);
@@ -24,25 +20,39 @@ function createGrid() {
     return;
   } else if (n === null) {
       return;
+  } else if (n === "") {
+      return;
   } else {
       // Clear the old grid
-      while (cdiv.firstChild) {
-        cdiv.removeChild(cdiv.firstChild);
-      }
+      clearOldGrid();
 
       // Create the new grid
-      for (let c = 1; c < n * n + 1; c++) {
-        const div = document.createElement('div');
-        div.style.width = `${Math.floor(480 / n)}px`;
-        div.style.height = `${Math.floor(480 / n)}px`;
-        cdiv.style.width = `${Math.floor(480 / n) * n}px`;
-        cdiv.style.height = `${Math.floor(480 / n) * n}px`;
-        cdiv.appendChild(div);
-      }
+      createNewGrid(n);
       
       // Add an event listener to the divs again (since they had been deleted)
       cdiv.childNodes.forEach(div => {
         div.addEventListener('mouseenter', changeColor)
-      }); 
+    }); 
+  }
+}
+
+function changeColor(e) {
+  e.target.style.background = "black";
+}
+
+function clearOldGrid() {
+  while (cdiv.firstChild) {
+    cdiv.removeChild(cdiv.firstChild);
+  }
+}
+
+function createNewGrid(n) {
+  for (let c = 1; c < n * n + 1; c++) {
+    const div = document.createElement('div');
+    div.style.width = `${Math.floor(480 / n)}px`;
+    div.style.height = `${Math.floor(480 / n)}px`;
+    cdiv.style.width = `${Math.floor(480 / n) * n}px`;
+    cdiv.style.height = `${Math.floor(480 / n) * n}px`;
+    cdiv.appendChild(div);
   }
 }
