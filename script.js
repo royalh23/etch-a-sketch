@@ -49,10 +49,10 @@ function clearOldGrid() {
 function createNewGrid(n) {
   for (let c = 1; c < n * n + 1; c++) {
     const div = document.createElement('div');
-    div.style.width = `${Math.floor(560 / n)}px`;
-    div.style.height = `${Math.floor(560 / n)}px`;
-    cdiv.style.width = `${Math.floor(560 / n) * n}px`;
-    cdiv.style.height = `${Math.floor(560 / n) * n}px`;
+    div.style.width = `${560 / n}px`;
+    div.style.height = `${560 / n}px`;
+    cdiv.style.width = `${560 / n * n}px`;
+    cdiv.style.height = `${560 / n * n}px`;
     cdiv.appendChild(div);
   }
 }
