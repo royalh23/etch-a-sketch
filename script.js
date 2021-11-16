@@ -21,10 +21,8 @@ function createGrid() {
   } else if (n === null || n === "") {
       return;
   } else {
-      // Clear the old grid
       clearOldGrid();
 
-      // Create the new grid
       createNewGrid(n);
       
       // Add an event listener to the divs again (since they had been deleted)
