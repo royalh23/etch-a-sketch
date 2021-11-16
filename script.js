@@ -18,9 +18,7 @@ function createGrid() {
   if (n > 100) {
     alert("The maximum limit is 100.");
     return;
-  } else if (n === null) {
-      return;
-  } else if (n === "") {
+  } else if (n === null || n === "") {
       return;
   } else {
       // Clear the old grid
