@@ -50,8 +50,6 @@ function createNewGrid(n) {
     const div = document.createElement('div');
     div.style.width = `${480 / n}px`;
     div.style.height = `${480 / n}px`;
-    cdiv.style.width = `${480 / n * n}px`;
-    cdiv.style.height = `${480 / n * n}px`;
     cdiv.appendChild(div);
   }
 }
