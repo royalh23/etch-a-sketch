@@ -14,6 +14,9 @@ const button = document.querySelector('button');
 button.addEventListener('click', createGrid);
 
 function createGrid() {
+  // Clear the grid
+  cdiv.childNodes.forEach(div => div.style.background = "white");
+
   let n = prompt("How many squares per side do you want in the new grid?");
   if (n > 100) {
     alert("The maximum limit is 100.");
@@ -45,10 +48,10 @@ function clearOldGrid() {
 function createNewGrid(n) {
   for (let c = 1; c < n * n + 1; c++) {
     const div = document.createElement('div');
-    div.style.width = `${560 / n}px`;
-    div.style.height = `${560 / n}px`;
-    cdiv.style.width = `${560 / n * n}px`;
-    cdiv.style.height = `${560 / n * n}px`;
+    div.style.width = `${480 / n}px`;
+    div.style.height = `${480 / n}px`;
+    cdiv.style.width = `${480 / n * n}px`;
+    cdiv.style.height = `${480 / n * n}px`;
     cdiv.appendChild(div);
   }
 }

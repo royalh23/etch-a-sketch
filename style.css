@@ -6,7 +6,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
   gap: 50px;
 }
 
@@ -17,14 +16,16 @@ button {
 }
 
 .container {
+  box-sizing: content-box;
   display: flex;
   flex-wrap: wrap;
-  width: 560px;
-  height: 560px;
+  width: 480px;
+  height: 480px;
+  border: 9px outset gray;
+  box-shadow: 10px 10px 12px grey;
 }
 
 .container>div {
-  border: 1px solid black;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
 }
