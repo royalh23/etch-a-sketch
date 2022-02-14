@@ -1,1 +1,1 @@
-This is a Etch-a-Sketch project. This project mainly demonstrates my DOM manipulation skills.
+This is a Etch-a-Sketch project. This project mainly demonstrates my DOM manipulation skills. You can check the project on this website: https://royalh23.github.io/etch-a-sketch/
