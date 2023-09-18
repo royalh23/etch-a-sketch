@@ -5,7 +5,6 @@ function changeBg(e) {
 function createGrid(n) {
   for (let i = 1; i <= n * n; i++) {
     const square = document.createElement("div");
-    square.style.border = "1px solid black";
     square.style.width = `${500/n}px`;
     square.style.height = `${500/n}px`;
     container.appendChild(square);
