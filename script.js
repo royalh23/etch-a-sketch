@@ -12,6 +12,13 @@ function createGrid(n) {
   }
 }
 
+function createNewGrid() {
+  let number = getAnswer();
+  container.innerHTML = "";
+  createGrid(number);
+  addEventListenersToSquares();
+}
+
 function getAnswer() {
   let number;
   while (true) {
@@ -24,19 +31,15 @@ function getAnswer() {
   return number;
 }
 
+function addEventListenersToSquares() {
+  const squares = document.querySelectorAll(".container>div");
+  squares.forEach(square => square.addEventListener("mouseover", changeBg));
+}
+
 
 const container = document.querySelector(".container");
 const button = document.querySelector("button");
 
 createGrid(16);
-
-const squares = document.querySelectorAll(".container>div");
-squares.forEach(square => square.addEventListener("mouseover", changeBg));
-
-button.addEventListener("click", () => {
-  let number = getAnswer();
-  container.innerHTML = "";
-  createGrid(number);
-  const squares = document.querySelectorAll(".container>div");
-  squares.forEach(square => square.addEventListener("mouseover", changeBg));
-});
+addEventListenersToSquares();
+button.addEventListener("click", createNewGrid);
