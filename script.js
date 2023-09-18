@@ -21,8 +21,8 @@ function createNewGrid() {
 function getAnswer() {
   let number;
   while (true) {
-    number = +prompt("Enter the number of squares per side");
-    if (number >= 1 && number <= 100) {
+    number = prompt("Enter the number of squares per side");
+    if (number >= 1 && number <= 100 || number === null) {
       break;
     }
     alert("Please enter a number between 1 and 100, inclusive");
