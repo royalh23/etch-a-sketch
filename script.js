@@ -12,6 +12,18 @@ function createGrid(n) {
   }
 }
 
+function getAnswer() {
+  let number;
+  while (true) {
+    number = +prompt("Enter the number of squares per side");
+    if (number >= 1 && number <= 100) {
+      break;
+    }
+    alert("Please enter a number between 1 and 100, inclusive");
+  }
+  return number;
+}
+
 
 const container = document.querySelector(".container");
 const button = document.querySelector("button");
@@ -22,7 +34,7 @@ const squares = document.querySelectorAll(".container>div");
 squares.forEach(square => square.addEventListener("mouseover", changeBg));
 
 button.addEventListener("click", () => {
-  let number = +prompt("Enter the number of squares per side"); 
+  let number = getAnswer();
   container.innerHTML = "";
   createGrid(number);
   const squares = document.querySelectorAll(".container>div");
