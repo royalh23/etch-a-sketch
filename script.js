@@ -18,6 +18,9 @@ const button = document.querySelector("button");
 
 createGrid(16);
 
+const squares = document.querySelectorAll(".container>div");
+squares.forEach(square => square.addEventListener("mouseover", changeBg));
+
 button.addEventListener("click", () => {
   let number = +prompt("Enter the number of squares per side"); 
   container.innerHTML = "";
@@ -25,6 +28,3 @@ button.addEventListener("click", () => {
   const squares = document.querySelectorAll(".container>div");
   squares.forEach(square => square.addEventListener("mouseover", changeBg));
 });
-
-const squares = document.querySelectorAll(".container>div");
-squares.forEach(square => square.addEventListener("mouseover", changeBg));
